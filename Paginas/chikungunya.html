@@ -1,0 +1,144 @@
+<script>
+    var jaAtivado = false;
+    // sergio - stack overflow
+    $(document).ready(function(){
+        
+        jaAtivado = false;
+        var offset = $('#menuFixoOffsetado').offset().top - 64;
+        var pageText = $('#page-text');
+        var barraBranca = $('#barra-branca-topo');
+        $(document).on('scroll', function () {     
+                                           
+            if (offset <= $(window).scrollTop()) {
+                if(jaAtivado == false){                    
+                    $('#menuFixoOffsetado').addClass('fixar');
+                    pageText.text("Chikungunya");
+                    pageText.addClass('black-and-white');
+                    barraBranca.addClass('black-and-white');
+                    jaAtivado = true;
+                }
+            } else {
+                if(jaAtivado == true){
+                    $('#menuFixoOffsetado').removeClass('fixar');
+                    pageText.text("Projeto Água");
+                    pageText.removeClass('black-and-white');
+                    barraBranca.removeClass('black-and-white');
+                    jaAtivado = false;
+                }
+            }
+            
+            for (var i = 1; i < 6; i++){
+                var tabActual = $("#Tab-"+i);
+                if(isScrolledIntoView("#" + i, $(window).scrollTop())){
+                    tabActual.addClass('tabeador-borda');                   
+                }else{                                     
+                    $("#Tab-"+i+".tabeador-borda").removeClass('tabeador-borda');                                  
+                }
+            }
+                                               
+        });
+        }
+        
+    );
+    
+    // Steve  -  Stack overflow
+    $("#Tab-1").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#1").offset().top - 160
+        }, 1000);
+    });
+    
+    $("#Tab-2").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#2").offset().top - 160
+        }, 1000);
+    });
+    
+     $("#Tab-3").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#3").offset().top - 160
+        }, 1000);
+    });
+    
+    $("#Tab-4").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#4").offset().top - 160
+        }, 1000);
+    });
+    
+    $("#Tab-5").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#5").offset().top - 160
+        }, 1000);
+    });
+    
+    function isScrolledIntoView(el, actualScrollTopOffset)
+    {
+        var elemento = $(el);
+        var offsetTop = elemento.offset().top - 64;
+        var offsetDown = offsetTop + elemento.height();
+        var windowHeight = $(window).height() /2;
+        return actualScrollTopOffset + windowHeight >= offsetTop && actualScrollTopOffset + windowHeight <= offsetDown;
+    } 
+</script>
+<!-- CABEÇALHO -->
+<div class="divisor"></div>
+<div class="page_header-master">
+    <div class="header-master-text_area">
+        <h1 style="color:#FFF; font-family:'Varela Round', sans-serif">Chikungunya</h1>
+    </div>
+    <div class="header-master-image_area imgDengue">
+    </div>
+</div>
+<div class="artigo-topicos mdl-shadow--3dp" id="menuFixoOffsetado">
+    <div class="button-tabeador animado-tab" id="Tab-1"><strong>INTRODUÇÃO</strong></div>
+    <div class="button-tabeador animado-tab" id="Tab-2"><strong>TRANSMISSÃO</strong></div>
+    <div class="button-tabeador animado-tab" id="Tab-3"><strong>SINTOMAS</strong></div>
+    <div class="button-tabeador animado-tab" id="Tab-4"><strong>TRATAMENTO</strong></div>
+    <div class="button-tabeador animado-tab" id="Tab-5"><strong>ETIMOLOGIA</strong></div>
+
+
+</div>
+<!-- CONTEÚDO / TEXTO -->
+<div class="conteudo-artigo">
+    
+    <div id="1" class="container-texto">    
+        <h2>Chikungunya</h2>
+        <p>
+            Chicungunha   , chikungunya ou catolotolo (português angolano)  é uma infecção causada por um arbovírus, do gênero Alphavirus (Togaviridae), que é transmitido aos seres humanos por mosquitos do gênero Aedes. Até recentemente havia sido detectado somente na África (onde estava restrito a um ciclo silvestre), na Ásia Oriental e na Índia, onde sua transmissão era principalmente urbana, envolvendo os vetores Aedes aegypti e Aedes albopictus.
+        </p>
+        <p>
+            No Brasil, casos da doença foram detectados pela primeira vez em agosto de 2010.
+        </p>
+    </div>
+    <div id="2" class="container-texto">    
+        <h2>Transmissão</h2>
+        <p>A transmissão do vírus chicungunha (CHIKV) é feita através da picada de insetos-vetores do gênero Aedes, que em cidades é principalmente pelo Aedes aegypti e em ambientes rurais ou selvagens pode ser por Aedes albopictus. Embora a transmissão direta entre humanos não esteja demonstrada, há de se considerar a possibilidade da transmissão in utero da mãe para o feto.[carece de fontes]</p>
+        <p>
+        O período de incubação do vírus é de 4 a 7 dias, e a doença, na maioria dos casos, é auto-limitante. A mortalidade em menores de um ano é de 0,4%, podendo ser mais elevada em indivíduos com patologias associadas.[carece de fontes]
+        </p>
+    </div>
+    <div id="3" class="container-texto">    
+        <h2>Sintomas</h2>
+        <p>
+            Os sintomas da febre chicungunha são característicos de uma virose, e portanto, inespecíficos. Os sintomas iniciais são febre acima de 39ºC, de início repentino, dores intensas nas articulações de pés e mãos, dedos, tornozelos e pulsos, dores de cabeça, dores musculares e manchas vermelhas na pele. O diagnóstico diferencial com a febre hemorrágica da dengue é extremamente importante, razão pela qual, ao aparecimento dos sintomas é fundamental buscar socorro médico.[carece de fontes]
+        </p>
+        <p>
+            Diferentemente da dengue, doença viral transmitida pelos mesmos mosquitos vetores, uma parte dos indivíduos infectados pode desenvolver a forma crônica da doença, com a permanência dos sintomas, que podem durar entre 6 meses e 1 ano. “Há casos de pacientes que não conseguem escrever”, diz o coordenador do Programa Nacional de Controle da Dengue do Ministério da Saúde, Giovanini Coelho.
+        </p>
+    </div>
+    <div id="4" class="container-texto"> 
+        <h2>Tratamento</h2>
+        <p>Até 2014 ainda não havia vacina ou tratamento específico para esse vírus. Assim o tratamento é apenas dos sintomas - febre, dor e desidratação, com antipirético, analgésico e soro fisiológico, respectivamente.</p>
+    </div>
+               
+    <div id="5" class="container-texto">    
+        <h2>Etimologia</h2>
+        <p>
+            Chicungunha é um aportuguesamento de chikungunya, o nome da doença na língua maconde, um dos idiomas oficiais da Tanzânia, onde foi documentada a primeira epidemia da doença em 1953. O termo provém da raiz verbal kungunyala, e significa "tornar-se dobrado ou contorcido", em referência à aparência curvada dos pacientes, motivada pelas intensas dores articulares e musculares, características da doença. Em Angola (África) a doença é popularmente conhecida por catolotolo, palavra proveniente do quimbundo katolotolu, derivação do verbo kutolojoka ("ficar alquebrado").
+        </p>
+    </div>
+    <div class="license-container">
+        Adaptado - Licenciado sob a licença <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.pt" >Creative Commons</a>: https://pt.wikipedia.org/wiki/Chicungunha
+    </div>
+</div>

@@ -1,0 +1,270 @@
+<script>
+    var jaAtivado = false;
+    // sergio - stack overflow
+    $(document).ready(function(){
+        
+        jaAtivado = false;
+        var offset = $('#menuFixoOffsetado').offset().top - 64;
+        var pageText = $('#page-text');
+        var barraBranca = $('#barra-branca-topo');
+        $(document).on('scroll', function () {     
+                                           
+            if (offset <= $(window).scrollTop()) {
+                if(jaAtivado == false){                    
+                    $('#menuFixoOffsetado').addClass('fixar');
+                    pageText.text("Dengue");
+                    pageText.addClass('black-and-white');
+                    barraBranca.addClass('black-and-white');
+                    jaAtivado = true;
+                }
+            } else {
+                if(jaAtivado == true){
+                    $('#menuFixoOffsetado').removeClass('fixar');
+                    pageText.text("Projeto Água");
+                    pageText.removeClass('black-and-white');
+                    barraBranca.removeClass('black-and-white');
+                    jaAtivado = false;
+                }
+            }
+            
+            for (var i = 1; i < 7; i++){
+                var tabActual = $("#Tab-"+i);
+                if(isScrolledIntoView("#" + i, $(window).scrollTop())){
+                    tabActual.addClass('tabeador-borda');                   
+                }else{                                     
+                    $("#Tab-"+i+".tabeador-borda").removeClass('tabeador-borda');                                  
+                }
+            }
+                                               
+        });
+        }
+        
+    );
+    
+    // Steve  -  Stack overflow
+    $("#Tab-1").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#1").offset().top - 160
+        }, 1000);
+    });
+    
+    $("#Tab-2").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#2").offset().top - 160
+        }, 1000);
+    });
+    
+     $("#Tab-3").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#3").offset().top - 160
+        }, 1000);
+    });
+    
+    $("#Tab-4").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#4").offset().top - 160
+        }, 1000);
+    });
+    
+    $("#Tab-5").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#5").offset().top - 160
+        }, 1000);
+    });
+
+    $("#Tab-6").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#6").offset().top - 160
+        }, 1000);
+    });
+
+    
+    function isScrolledIntoView(el, actualScrollTopOffset)
+    {
+        var elemento = $(el);
+        var offsetTop = elemento.offset().top - 64;
+        var offsetDown = offsetTop + elemento.height();
+        var windowHeight = $(window).height() /2;
+        return actualScrollTopOffset + windowHeight >= offsetTop && actualScrollTopOffset + windowHeight <= offsetDown;
+    } 
+</script>
+<!-- CABEÇALHO -->
+<div class="divisor"></div>
+<div class="page_header-master">
+    <div class="header-master-text_area">
+        <h1 style="color:#FFF; font-family:'Varela Round', sans-serif">Dengue</h1>
+    </div>
+    <div class="header-master-image_area imgDengue">
+    </div>
+</div>
+<div class="artigo-topicos mdl-shadow--3dp" id="menuFixoOffsetado">
+    <div class="button-tabeador animado-tab" id="Tab-1"><strong>INTRODUÇÃO</strong></div>
+    <div class="button-tabeador animado-tab" id="Tab-2"><strong>HISTÓRIA</strong></div>
+    <div class="button-tabeador animado-tab" id="Tab-3"><strong>SINAIS E SINTOMAS</strong></div>
+    <div class="button-tabeador animado-tab" id="Tab-4"><strong>CAUSAS</strong></div>
+    <div class="button-tabeador animado-tab" id="Tab-5"><strong>DIAGNÓSTICO</strong></div>    
+    <div class="button-tabeador animado-tab" id="Tab-6"><strong>TRATAMENTO</strong></div>
+
+
+</div>
+<!-- CONTEÚDO / TEXTO -->
+<div class="conteudo-artigo">
+     <div class="container-casos-artigo">
+                <div class="casos-home dengue-casos"></div>
+                <div class="casos-home dengue-dia-casos"></div>
+                <div class="casos-home dengue-mortes"></div>
+    </div>
+
+    <div id="1" class="container-texto">    
+        <h2>A Dengue</h2>
+
+        <p>
+        Dengue é uma doença tropical infecciosa causada pelo vírus da dengue, um arbovírus da família Flaviviridae, gênero Flavivírus e que inclui quatro tipos imunológicos: DEN-1, DEN-2, DEN-3 e DEN-4. Os sintomas incluem febre, dor de cabeça, dores musculares e articulares e uma erupção cutânea característica que é semelhante à causada pelo sarampo. Em uma pequena proporção de casos, a doença pode evoluir para a dengue hemorrágica com risco de morte, resultando em sangramento, baixos níveis de plaquetas sanguíneas, extravasamento de plasma no sangue ou até diminuição da pressão arterial a níveis perigosamente baixos.
+        </p>
+        <p>
+        A dengue é transmitida por várias espécies de mosquito do gênero Aedes, principalmente o Aedes aegypti. O vírus tem quatro tipos diferentes e a infecção por um deles dá proteção permanente para o mesmo sorotipo e imunidade parcial e temporária contra os outros três. Um contágio subsequente por algum tipo diferente do vírus aumenta o risco de complicações graves no paciente. Como não há vacina disponível no mercado, a melhor forma de evitar a epidemia é a prevenção, através da redução ou destruição do habitat e da população de mosquitos transmissores e da limitação da exposição a picadas.
+        </p>
+        <p>
+        A dengue tem como hospedeiros vertebrados o ser humano e outros primatas, mas somente o primeiro apresenta manifestação clínica da infecção e período de viremia de aproximadamente sete dias. Nos demais primatas, a viremia é baixa e de curta duração. Atualmente, a dengue é a arbovirose mais comum que atinge a humanidade, sendo responsável por cerca de 100 milhões de casos/ano em uma população de risco de 2,5 a 3 bilhões de seres humanos.
+        </p>
+        <p>
+        O tratamento da dengue é de apoio, com reidratação oral ou intravenosa para os casos leves ou moderados e fluidos intravenosos e transfusão de sangue para os casos mais graves. O número de casos da doença tem aumentado dramaticamente desde os anos 1960, com cerca de 50 a 390 milhões de pessoas infectadas todos os anos. A dengue é endêmica do sudeste asiático e as primeiras descrições da doença datam de 1779, sendo que sua causa viral e seu modo de transmissão foram descobertos no início do século XX. A dengue tornou-se um problema global desde a Segunda Guerra Mundial e é endêmica em mais de 110 países diferentes, principalmente em regiões tropicais de Oceania, África Oriental, Caribe e América. Além de eliminar os mosquitos, pesquisas para o desenvolvimento de uma vacina e medicação diretamente orientada para esse tipo de vírus são formas de controlar a doenças.
+        </p>
+    </div>
+    <div id="2" class="container-texto">
+        <h2>História</h2>
+
+        <p>
+        O vírus da dengue, provavelmente, se originou de vírus que circulavam em primatas não humanos nas proximidades da península da Malásia. O crescimento populacional aproximou as habitações da região à selva e, assim, mosquitos transmitiram vírus ancestrais de primatas a humanos que, após mutações, originaram os quatro diferentes tipos de vírus da dengue atuais.
+        </p>
+        <p>
+        O primeiro registro de um provável caso de dengue foi publicado numa enciclopédia médica chinesa da época da dinastia Jin (265-420). Os chineses se referiam à doença como "veneno da água" e sabiam que havia alguma associação com insetos voadores. O principal vetor, o mosquito Aedes aegypti, se espalhou para fora da África durante os séculos XV a XIX, em parte devido ao aumento do comércio de escravos. Houve relatos de epidemias no século XVII, mas os primeiros registros mais plausíveis de dengue datam de 1779 e 1780, quando uma epidemia varreu a Ásia, África e América do Norte. Dessa época até 1940, epidemias de dengue se tornaram frequentes.
+        </p>
+        <p>
+        Em 1906, a transmissão por mosquitos do gênero Aedes foi confirmada. No ano seguinte, em 1907, foi demonstrado que a dengue é causada por um vírus, tornando-a a segunda doença na história, depois da febre amarela, de etiologia viral confirmada. Posteriormente, pesquisas de John Burton Cleland e Joseph Franklin Siler completaram a compreensão básica da transmissão da dengue.
+        </p>
+        <p>
+        A acentuada propagação da dengue durante e após a Segunda Guerra Mundial tem sido atribuída a perturbações ecológicas. As mesmas tendências também levaram à disseminação de diferentes sorotipos da doença para novas áreas e ao surgimento da dengue causadora da febre hemorrágica. Esta forma grave da doença foi relatada pela primeira vez em 1953, nas Filipinas. Na década de 1970, a forma grave da doença tornou-se uma das principais causas de mortalidade infantil e apareceu também na região do Pacífico e na América. A dengue hemorrágica e a síndrome do choque da dengue foram observadas pela primeira vez na América do Sul e Central em 1981, a DENV-2 foi contraída por pessoas que haviam sido previamente infectadas com o DENV-1 vários anos antes.
+        </p> 
+    </div>  
+    <div id="3" class="container-texto">
+        <h2>Sinais e sintomas</h2>
+
+        <p>
+        Normalmente, as pessoas infectadas com o vírus da dengue são assintomáticas (cerca de 80%) ou apenas apresentam sintomas leves, como uma febre simples. Outros pacientes apresentam a doença de modo mais grave (5%) e uma pequena proporção tem risco de morte. O período de incubação (tempo entre a exposição e o aparecimento dos sintomas) varia de 3 a 14 dias, mas na maioria das vezes é de 4 a 7 dias. Sendo assim, suspeita-se que viajantes que retornem de áreas endêmicas tenham dengue se eles apresentarem febre, ou outros sintomas característicos, que começarem a surgir a partir de 14 dias após retornarem. As crianças muitas vezes apresentam sintomas semelhantes aos do resfriado comum e da gastroenterite (vômitos e diarreia) e têm um risco maior de complicações graves; embora os sintomas iniciais sejam geralmente leves, eles incluem febre alta.
+        </p>
+        
+        <h5>Curso clínico</h5>
+        <div class="divisor-texto"></div>
+        
+        <p>
+        Os sintomas característicos da dengue são febre de início súbito, dor de cabeça (normalmente localizada atrás dos olhos), dores musculares e articulares, além de erupções cutâneas. O nome alternativo para a dengue, "febre quebra-ossos", vem da dor causada em músculos e articulações. O curso da infecção é dividido em três fases: febril, crítica e de recuperação.
+        </p>
+        <p>
+        A fase febril envolve febre alta, potencialmente acima de 40 °C, associada a dor de cabeça e dor generalizada; esta fase geralmente dura de dois a sete dias. Podem também ocorrer vômitos. A erupção ocorre em 50 a 80% dos pacientes no primeiro ou no segundo dia de sintomas, como pele corada, ou mais tarde no curso da doença (dias 4-7), como uma erupção morbiliforme, (semelhante a causada pelo sarampo). Algumas petéquias (pequenas manchas vermelhas que não desaparecem quando a pele é pressionada, as quais são causadas por ruptura de capilares) podem aparecer nesta fase, assim como algum sangramento leve da membrana mucosa da boca e do nariz. A febre em si é classicamente de natureza bifásica, depois é interrompida e, em seguida, volta durante um ou dois dias, embora muitas vezes haja grande variação na forma como este padrão realmente acontece em cada pessoa.
+        </p>
+        
+        <h5>Curso clínico da dengue</h5>
+        <div class="divisor-texto"></div>
+        
+        <p>
+        Em algumas pessoas, a doença prossegue para uma fase crítica logo após o período de intervalo da febre e, normalmente, durando de um a dois dias. Durante esta fase, pode haver acumulação significativa de fluido nas cavidades torácica e abdominal, devido ao aumento da permeabilidade e do vazamentos dos capilares sanguíneos. Isto leva à depleção de fluido a partir da circulação e hipoperfusão, a diminuição do fornecimento de sangue para os órgãos vitais. Durante esta fase, pode ocorrer a disfunção de órgãos e sangramentos graves, normalmente a partir do trato gastrointestinal. SCD (síndrome do choque da dengue) e hemorragias (dengue hemorrágica) ocorrem em menos de 5% de todos os casos de dengue. No entanto aqueles que tenham sido previamente infectados com outro sorotipo do vírus da dengue ("infecção secundária") têm um risco aumentado. Essa fase crítica, apesar de rara, geralmente ocorre mais em crianças e em adultos jovens. A febre hemorrágica da dengue (FHD) e a síndrome de choque da dengue (SCD) atingem pelo menos 500 mil pessoas todos os anos e apresentam uma taxa de mortalidade de até 10% para pacientes hospitalizados e de 30% para pacientes que não receberam tratamento.
+        </p>
+        <p>
+        A fase de recuperação ocorre em seguida, com a reabsorção do líquido que vazou para a corrente sanguínea. Isso geralmente dura de dois a três dias. A melhora é muitas vezes surpreendente e pode ser acompanhada por grave coceira e por uma frequência cardíaca lenta. Outra erupção pode ocorrer, seja maculopapular ou vasculítica, que é seguida por uma descamação da pele. Durante esta fase, pode ocorrer um estado de sobrecarga de líquidos que, se afetar o cérebro, pode causar um redução do nível de consciência ou convulsões no paciente. A sensação de fadiga pode durar algumas semanas em adultos.
+        Complicações associadas
+        </p>
+        <p>
+        A dengue pode ocasionalmente afetar vários outros sistemas do corpo, isoladamente ou juntamente com os sintomas clássicos da doença. Uma diminuição do nível de consciência ocorre entre 0,5 e 6% dos casos graves de dengue, o que é atribuível tanto a infecção do cérebro pelo vírus ou indiretamente como resultado da disfunção de órgãos vitais, como, por exemplo, o fígado.
+        </p>
+        <p>
+        Outras perturbações neurológicas foram relatadas em casos da doença, tais como mielite transversa e síndrome de Guillain-Barré. Infecção do coração e insuficiência hepática aguda estão entre as complicações mais raras.
+        </p>
+    </div>     
+    <div id="4" class="container-texto">
+        <h2>Causas</h2>
+        
+        <h5>Virologia</h5>
+        <p>
+        O vírus da dengue (DENV) é um vírus RNA da família Flaviviridae; gênero Flavivirus. Entre outros membros do mesmo gênero estão os vírus da febre amarela, da febre do Nilo Ocidental, da encefalite de São Luís, encefalite japonesa, da encefalite transmitida por carrapatos, da doença da floresta de Kyasanur e da febre hemorrágica de Omsk. A maioria deles são transmitidos por artrópodes (mosquitos ou carrapatos) e, portanto, também são conhecidos como arbovírus, termo derivado da expressão em língua inglesa "arthropod-borne viruses".
+        </p>
+        <p>
+        O genoma (material genético) do vírus da dengue contém cerca de 11 000 bases de nucleotídeos, que codificam três tipos diferentes de moléculas de proteínas (C, prM e E) que formam a partícula viral e sete outros tipos de moléculas de proteína (NS1, NS2A, NS2B, NS3, NS4A, NS4B e NS5) que apenas são encontradas em células hospedeiras infectadas e são necessárias para a replicação do vírus. Existem quatro cepas do vírus, que são chamadas de serotipos, as quais são referidas como DEN-1, DEN-2, DEN-3 e DEN-4. As distinções entre os serotipos baseia-se na sua antigenicidade.
+        </p>
+        
+        <h5>Transmissão</h5>
+        <p>        
+        A transmissão se faz pela picada do mosquito Aedes aegypti. Eles normalmente picam durante o dia, principalmente no início da manhã e à noite, mas são capazes de morder e espalhar a infecção em qualquer hora do dia, durante todo o ano. Entre as outras espécies de Aedes que transmitem a doença estão o A. albopictus, o A. polynesiensis e o A. scutellaris. Os seres humanos são o principal hospedeiro do vírus,  mas também circula em primatas.
+        </p>
+        <p>
+        A infecção pode ser adquirida através de uma única picada. Uma fêmea do mosquito que se alimenta do sangue de uma pessoa infectada com dengue, durante o período febril inicial de 2 a 10 dias, infecta-se com o vírus nas células que revestem seu intestino. Depois de cerca de 8 a 10 dias, o vírus propaga-se para outros tecidos do inseto, como a glândula salivar do mosquito e assim é subsequentemente liberado em sua saliva. O vírus parece não ter efeito negativo sobre o inseto, que se mantém infectado por toda a vida sem apresentar sintomas. O Aedes aegypti prefere colocar seus ovos em recipientes artificiais de água para viver em estreita proximidade com os seres humanos e para se alimentar de pessoas ao invés de outros seres vertebrados.
+        </p>
+        <p>
+        A dengue também pode ser transmitida através de sangue e de derivados infectados, além de também poder ser transmitida através da doação de órgãos.  Em países como Singapura, onde a dengue é endêmica, o risco é estimado entre 1,6 a 6 para cada 10 000 transfusões de sangue. A transmissão vertical (de mãe para filho) durante a gravidez ou no parto já foi relatada. Outros modos de transmissão de pessoa para pessoa também já foram relatados, mas são muito incomuns. A variação genética no vírus da dengue é específica da região, sugerindo que o estabelecimento da doença em novos territórios é relativamente pouco frequente, apesar da dengue estar emergente em novas regiões do planeta nas últimas décadas.
+        </p>
+        <p>
+        Não há transmissão por contato direto de um doente ou de suas secreções com uma pessoa sadia, nem de fontes de água ou alimento. Na Ásia e na África alguns macacos silvestres podem contrair dengue e assim serem usados como vetores, porém na América do Sul os macacos demonstraram baixa viremia, provavelmente insuficiente, e não há estudos comprovando que eles podem ser vetores da doença.
+        </p>
+        
+        <h5>Predisposição</h5>
+        <p>
+        A forma grave da doença é mais comum em bebês e crianças pequenas e, em contraste com muitas outras infecções, é mais comum em crianças que estão relativamente bem nutridas. Outro fator de risco para a forma grave da doença incluem: sexo feminino, índice de massa corporal (IMC) elevado, e carga viral. Embora cada sorotipo possa causar todo o espectro de doença, a cepa do vírus é um fator de risco. Acredita-se que a infecção por um sorotipo produz imunidade vitalícia para este determinado tipo, mas a proteção é apenas de curto prazo contra os outros três tipos.  O risco de doença grave por infecção secundária aumenta se alguém previamente exposto ao sorotipo DENV-1 contrair o sorotipo DENV-2 e DENV-3, ou se alguém previamente exposto ao DENV-3 adquirir o DENV-2. A dengue pode ser fatal em pessoas com doenças crônicas, como diabetes e asma.
+        </p>
+        <p>
+        Polimorfismos (variações normais) em genes específicos têm sido associados com um risco aumentado de complicações graves da dengue. Os exemplos incluem os genes que codificam as proteínas conhecidas como TNFα, lectina de ligação a manana, CTLA4, TGFβ, DC-SIGN, PLCE1, e as formas específicas de antígenos leucocitários humanos de variações do gene de HLA-B.  Uma anormalidade genética comum em africanos, conhecida como deficiência de glicose-6-fosfato desidrogenase, parece aumentar o risco de contrair dengue. Polimorfismos nos genes para o receptor de vitamina D e FcγR parecem oferecer proteção contra a forma grave da doença na infecção secundária por dengue.
+        </p>
+    </div>
+    <div id="5" class="container-texto">
+        <h2>Diagnóstico</h2>
+        
+        <p>
+        O diagnóstico da dengue é geralmente feito clinicamente, com base nos sintomas relatados e em exames físicos, o que se aplica especialmente em áreas endêmicas. No entanto, os sintomas iniciais da doença podem ser difíceis de diferenciar dos de outras infecções virais. Um diagnóstico provável é feito com base em sinal de febre e de mais dois dos seguintes sintomas: náuseas e vômitos, erupções cutâneas, dores generalizadas, baixa contagem de células brancas do sangue, resultado positivo no teste do torniquete ou qualquer outro sinal de alerta (ver tabela ao lado) em alguma pessoa que viva em uma área endêmica. Sinais de aviso normalmente ocorrem antes do início de um caso de dengue grave. O teste do torniquete, que é particularmente útil em locais onde exames laboratoriais não estão prontamente disponíveis, envolve a aplicação de um torniquete de pressão arterial entre a pressão sistólica e diastólica por cinco minutos, seguido pela contagem de todas as hemorragias petéquias que surgirem; um número maior torna o diagnóstico de dengue mais provável. 
+        </p>
+        <p>
+        O diagnóstico deve ser considerado em pessoas que desenvolverem febre pelo prazo de duas semanas e que esteja em regiões nos trópicos ou subtrópicos. Pode ser difícil distinguir a febre de dengue da chicungunha, uma infecção viral similar que partilha de muitos de seus sintomas e ocorre em partes similares do mundo em relação a dengue. Muitas vezes, pesquisas são realizadas para excluir outras condições que causem sintomas semelhantes, como malária, leptospirose, febre hemorrágica viral, febre tifoide, doença meningocócica, sarampo e gripe. 
+        </p>
+        <p>
+        A primeira alteração detectável em exames laboratoriais é uma baixa contagem de células brancas do sangue, o que pode ser seguido por baixo nível de plaquetas e acidose metabólica. Níveis moderadamente elevados de aminotransferase (AST e ALT) a partir do fígado são comumente associados com a baixa de plaquetas e de células brancas do sangue. No estágio grave da doença, os resultados indicam de fuga de plasma em hemoconcentração (como indicado por um aumento dos hematócritos) e hipoalbuminemia. Derrames pleurais ou ascites podem ser detectadas por meio de exame físico quando grandes, mas a demonstração de fluido no ultrassom pode auxiliar na identificação precoce da síndrome de choque da dengue.  O uso de ultrassom é limitado pela falta de disponibilidade em muitas regiões. A síndrome de choque da dengue está presente se a pressão arterial cai para ≤20 mm Hg, juntamente com o colapso vascular periférico. O colapso vascular é determinado em crianças através de recarga capilar atrasada, aumento da frequência cardíaca ou extremidades frias.
+        </p>
+        
+        <h5>Classificação</h5>
+        
+        <p>
+        A classificação de 2009 da Organização Mundial da Saúde (OMS) divide a dengue em dois grupos: complicadas e graves.  Isto substituiu a classificação de 1997 da OMS, que precisava ser simplificada, uma vez que tinha sido considerada muito restritiva, embora a classificação mais antiga ainda seja amplamente utilizada, como pelo Escritório Regional da Organização Mundial da Saúde para o Sudeste da Ásia em 2011. A dengue grave é definida como aquela associada com hemorragia grave, disfunção orgânica grave ou extravasamento de plasma grave , enquanto todos os outros casos são considerados mais simples. A classificação de 1997 da dengue a dividia em febre indiferenciada, dengue e febre hemorrágica de dengue.  A febre hemorrágica da dengue foi subdividido ainda mais em cinco graus diferentes. O grau I é a presença apenas de contusões ou um resultado positivo do teste do torniquete em alguém com febre; o grau II é a presença de sangramento espontâneo na pele e em outros lugares; o grau III é a evidência clínica de choque; enquanto o grau IV é um choque tão grave que a pressão arterial e o pulso não podem ser detectados. Os graus III e IV são referidos como "síndrome de choque da dengue".
+        </p>
+         
+        <h5>Testes de laboratório</h5>
+        
+        <p>
+        Quando os testes de laboratório para dengue são positivos, onde o dia zero é o início dos sintomas, primeiro refere-se em pessoas com uma infecção primária e o segundo refere-se àqueles com uma infecção secundária.
+        </p>
+        
+        <p>
+        O diagnóstico da dengue pode ser confirmado por testes microbiológicos de laboratório.  Isto pode ser feito pelo isolamento do vírus em cultura celular, a detecção de ácido nucleico por PCR, a detecção de anticorpos virais (tais como, por NS1) ou de anticorpos específicos (sorologia).  O isolamento do vírus e a detecção de ácidos nucleicos são mais precisos do que a detecção de antígenos, mas estes testes não são amplamente disponíveis, devido ao seu maior custo. A detecção de NS1 durante a fase febril de uma infecção primária pode ser superior a 90%, porém apenas entre 60 e 80% em infecções subsequentes. Todos os testes podem ser negativos nas fases iniciais da doença.  O PCR e a detecção de antígeno viral são mais precisos nos primeiros sete dias. Em 2012 foi introduzido um teste de PCR, que pode ser executado em equipamentos usados para diagnosticar a gripe; este é susceptível de melhorar o acesso ao diagnóstico baseado em PCR.
+        </p>
+        <p>
+        Estes testes de laboratório são apenas de valor diagnóstico durante a fase aguda da doença , com exceção da sorologia . Os testes de anticorpos específicos do vírus do dengue, tipos IgG e IgM, podem ser úteis na confirmação de um diagnóstico nas fases mais avançadas da infecção. IgG e IgM são produzidos depois de entre 5 e 7 dias. Os níveis mais altos de IgM são detectados após uma infecção primária, mas o IgM também é produzido na reinfecção. O IgM se torna indetectável entre 30 e 90 dias após a infecção primária, mas após reinfecções. IgG, pelo contrário, permanece detectável por mais de 60 anos e, na ausência de sintomas, é um indicador útil de infecções anteriores. Depois de uma infecção primária, o IgG atinge níveis de pico no sangue após 14-21 dias. Em re-infecções subsequentes, os níveis de pico são geralmente mais elevados. IgG e IgM proporcionam imunidade protetora para o serótipo do vírus infectante.  O teste de laboratório para os anticorpos IgG e IgM podem reagir de forma cruzada com outros flavivírus e podem resultar em um falso positivo após infecções recentes ou vacinas com o vírus da febre amarela ou a encefalite japonesa. A detecção de IgG sozinho não é considerada um diagnóstico, a menos que as amostras de sangue sejam coletadas há 14 dias e seja detectado um aumento maior do que quatro vezes nos níveis de IgG específico. Numa pessoa com sintomas, a detecção de IgM é considerada um diagnóstico.
+        </p>
+    </div>
+    <div id="6" class="container-texto">
+        <h2>Tratamento</h2>
+        <p>
+        Não há nenhuma droga antiviral específica para a dengue, portanto manter o equilíbrio hídrico (hidratação) adequado é importante para o paciente. O tratamento depende dos sintomas apresentados, variando desde terapia de reidratação oral em casa com acompanhamento até a internação com a administração de fluidos intravenosos e/ou transfusão de sangue. A decisão de internação hospitalar geralmente é baseada na presença dos "sinais de alerta" listados acima, especialmente em pessoas com condições de saúde preexistentes.
+        </p>
+        <p>
+        A hidratação intravenosa normalmente só é necessária durante um ou dois dias. A taxa de administração de fluido é titulada em débito urinário de 0,5–1 mL/kg/h, sinais vitais estáveis e normalização do hematócrito. Procedimentos médicos invasivos, tais como intubação nasogástrica, intramuscular e punções arteriais são evitados, tendo em vista o risco de sangramento. O paracetamol (acetaminofen) é usado para a febre e o desconforto, enquanto anti-inflamatórios não esteroides, como o ibuprofeno e a aspirina, devem ser evitados, visto que podem agravar o risco de hemorragia. A transfusão de sangue é iniciada mais cedo em pacientes com sinais vitais instáveis e no caso de uma diminuição no hematócrito, ao invés de esperar a concentração de hemoglobina diminuir a algum nível de "gatilho de transfusão" pré-determinado. Hemácias ou sangue total são recomendados, enquanto plaquetas e plasma geralmente não são.
+        </p>
+        <p>
+        Durante a fase de recuperação de fluidos intravenosos são interrompidos para evitar um estado de sobrecarga de líquidos. Se a pessoa estiver fora da fase crítica da doença, um ciclo diurético com furosemida pode ser usado para eliminar o excesso de líquido da circulação. Em caso mais graves, quando ocorre perda de fluido estimada em 5% ou mais da massa corporal, é feita uma reidratação endovenosa com um bolus de solução glicofisiológica (1:1 a 1:2) de 10-20 ml/kg mantendo-se infusão contínua numa velocidade inicial de 6-7 ml/kg/hora. (ou seja, injetar soro fisiológico na veia pra repor a água que foi perdida suando, vomitando, urinando e sangrando). Caso não haja melhora inicial aumenta-se a velocidade do soro para 10 ml/kg/h ou até 15 ml/kg/h nos casos refratários. Se não houver melhora, recomenda-se monitorização da pressão venosa e a colocação de sonda vesical de demora para controle da diurese. Após essa fase, não havendo estabilização clínica e laboratorial, avalia-se a necessidade de drogas vasoativas e de sangue total (10ml/kg) para queda importante no hematócrito ou alternativamente plasma, albumina ou colóides artificiais (10-20ml/kg) no caso de elevação do hematócrito.
+        </p>
+        <p>
+        Sangramentos podem ocorrer por causa da síndrome de choques da dengue (SCD) e a coagulação do sangue, geralmente agravada por medicamentos coagulantes, faz com que o nível de plaquetas fique abaixo do nível funcional mínimo (trombocitopenia). Nesse caso pode ser necessário transfusão de sangue, caso o soro não seja suficiente ou já tenha sido usado excessivamente. A monitorização hemodinâmica ou da pressão arterial deve ser usada para identificar os casos mais graves. Soluções cristalóides são mais eficazes e econômicas que as colóides. O uso de corticóides é desaconselhado.
+        </p>
+        <p>
+        Vários novos tratamentos tem sido sugeridos para lidar com as citocinas e toxinas envolvidas na infecção. Tem sido estudados tratamentos com Inibidores do fator ativador de plaquetas (PAF), pentoxifilina, antioxidantes, n-acetilcisteína, além de inibidores das endorfinas naturais como a naloxona e de antagonistas da bradicinina. O uso de inibidores do óxido nítrico pode ser benéfico principalmente nos casos de hipotensão persistente. O uso de infusão contínua de azul de metileno, também mostrou-se benéfico e com toxicidade mínima.
+        </p>
+    </div>
+    <div class="license-container">
+        Adaptado - Licenciado sob a licença <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.pt" >Creative Commons</a>: https://pt.wikipedia.org/wiki/Dengue
+    </div>
+</div>

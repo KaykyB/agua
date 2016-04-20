@@ -1,0 +1,195 @@
+<script>
+    var jaAtivado = false;
+    // sergio - stack overflow
+    $(document).ready(function(){
+        
+        jaAtivado = false;
+        var offset = $('#menuFixoOffsetado').offset().top - 64;
+        var pageText = $('#page-text');
+        var barraBranca = $('#barra-branca-topo');
+        $(document).on('scroll', function () {     
+                                           
+            if (offset <= $(window).scrollTop()) {
+                if(jaAtivado == false){                    
+                    $('#menuFixoOffsetado').addClass('fixar');
+                    pageText.text("Zika");
+                    pageText.addClass('black-and-white');
+                    barraBranca.addClass('black-and-white');
+                    jaAtivado = true;
+                }
+            } else {
+                if(jaAtivado == true){
+                    $('#menuFixoOffsetado').removeClass('fixar');
+                    pageText.text("Projeto Água");
+                    pageText.removeClass('black-and-white');
+                    barraBranca.removeClass('black-and-white');
+                    jaAtivado = false;
+                }
+            }
+            
+            for (var i = 1; i < 7; i++){
+                var tabActual = $("#Tab-"+i);
+                if(isScrolledIntoView("#" + i, $(window).scrollTop())){
+                    tabActual.addClass('tabeador-borda');                   
+                }else{                                     
+                    $("#Tab-"+i+".tabeador-borda").removeClass('tabeador-borda');                                  
+                }
+            }
+                                               
+        });
+        }
+        
+    );
+    
+    // Steve  -  Stack overflow
+    $("#Tab-1").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#1").offset().top - 160
+        }, 1000);
+    });
+    
+    $("#Tab-2").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#2").offset().top - 160
+        }, 1000);
+    });
+    
+     $("#Tab-3").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#3").offset().top - 160
+        }, 1000);
+    });
+    
+    $("#Tab-4").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#4").offset().top - 160
+        }, 1000);
+    });
+    
+    $("#Tab-5").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#5").offset().top - 160
+        }, 1000);
+    });
+    
+    function isScrolledIntoView(el, actualScrollTopOffset)
+    {
+        var elemento = $(el);
+        var offsetTop = elemento.offset().top - 64;
+        var offsetDown = offsetTop + elemento.height();
+        var windowHeight = $(window).height() /2;
+        return actualScrollTopOffset + windowHeight >= offsetTop && actualScrollTopOffset + windowHeight <= offsetDown;
+    } 
+</script>
+<!-- CABEÇALHO -->
+<div class="divisor"></div>
+<div class="page_header-master">
+    <div class="header-master-text_area">
+        <h1 style="color:#FFF; font-family:'Varela Round', sans-serif">Vírus da zica</h1>
+    </div>
+    <div class="header-master-image_area imgDengue">
+    </div>
+</div>
+<div class="artigo-topicos mdl-shadow--3dp" id="menuFixoOffsetado">
+    <div class="button-tabeador animado-tab" id="Tab-1"><strong>INTRODUÇÃO</strong></div>
+    <div class="button-tabeador animado-tab" id="Tab-2"><strong>SINTOMAS</strong></div>
+    <div class="button-tabeador animado-tab" id="Tab-3"><strong>ETIMOLOGIA</strong></div>
+    <div class="button-tabeador animado-tab" id="Tab-4"><strong>TRANSMISSÃO ENTRE HUMANOS</strong></div>
+    <div class="button-tabeador animado-tab" id="Tab-5"><strong>MOSQUITOS GM</strong></div>
+
+
+</div>
+<!-- CONTEÚDO / TEXTO -->
+<div class="conteudo-artigo">
+    <div class="container-casos-artigo">
+                <div class="casos-home microcefalia-casos"></div>
+                <div class="casos-home zika-sp"></div>
+                <div class="casos-home minuto-aedes"></div>
+    </div>
+    
+    <div id="1" class="container-texto">    
+        <h2>Zika Virus</h2>
+        <p>
+        O vírus da zica       (em inglês, Zika virus) é um vírus do gênero Flavivirus. Em humanos, transmitido através da picada do mosquito Aedes aegypti, causa a doença também conhecida como zika      — que embora raramente acarrete complicações para seu portador, apresenta indícios de poder causar microcefalia congênita (quando adquirido por gestante, podendo prejudicar o feto em alguns casos).   O nome Zika tem sua origem na floresta de Zika, perto de Entebbe na República de Uganda, onde o vírus foi isolado pela primeira vez em 1947. É relacionado aos vírus da dengue, da febre amarela e encefalite do Nilo, os quais igualmente fazem parte da família Flaviviridae.
+        </p>
+        <p>
+        Atualmente, a América Latina vem enfrentando um surto de vírus da zica. Suspeita-se que a entrada do vírus no Brasil tenha se dado durante a Copa do Mundo de 2014, quando o país recebeu turistas de várias partes do mundo, inclusive de áreas tropicais atingidas de forma mais intensa pelo vírus, como a África — onde surgiu — e a Polinésia Francesa na Oceania. No primeiro semestre de 2015, já havia casos confirmados em estados de todas as regiões do país. Com sintomas mais brandos que os da dengue e os da febre chikungunya (doenças também transmitidas pelo mosquito Aedes aegypti), a zica chegou a ser inicialmente ignorada pelas autoridades de saúde; porém há evidências de que a infecção pelo vírus da zica está associada a casos mais graves, como microcefalia congênita e síndrome de Guillain-Barré, que, embora continuem sendo condições raras, aumentaram de maneira incomum no país no ano de 2015.   
+        </p>
+        <p>
+        Outras doenças podem provocar problemas na formação do feto, sobretudo se adquiridas pela gestante nos três primeiros meses de gestação. Rubéola, toxoplasmose, sífilis e infecções causadas pelo citomegalovírus são as principais causas da microcefalia. Existem também outras causas, como o uso de drogas, consumo excessivo de álcool e exposição a produtos químicos. A microcefalia pode ocorrer em decorrência de todas elas. Existem ainda poucos casos comprovados cientificamente da relação entre o zika e a microcefalia. Por enquanto, há muitos casos inferidos (sintomas similares aos do zika, mas sem comprovação por teste de material genético).
+        </p>
+        <p>
+        Embora a dengue e a chikungunya sejam também febres causadas por um arbovírus, como a zika, nunca se estabeleceu (de acordo com a OMS) nenhuma relação entre a infecção por essas doenças e o nascimento de bebês com microcefalia congênita.
+        </p>
+    </div>
+    <div id="2" class="container-texto">  
+        <h2>Sintomas</h2>
+        <p>
+        Aproximadamente 80% das pessoas infectadas não desenvolvem manifestações clínicas. Nos casos em que há manifestação de sintomas, eles costumam incluir dores de cabeça leves, febre baixa, mal estar, dores leves nas articulações, conjuntivite, coceira e exantema maculopapular (erupção cutânea que não se eleva acima da superfície da pele), que, no geral, desaparecem espontaneamente após 3 a 7 dias.
+        </p>
+        <p>
+        O primeiro caso bem documentado do vírus da zica foi em 1964, começando com uma leve dor de cabeça que progrediu para um exantema maculopapular, febre e dor nas costas. Com dois dias, a erupção começou a desaparecer, e com 3 dias, a febre desapareceu com apenas a erupção permanecendo.
+        </p>
+        <p>
+
+        Não existe tratamento específico ou vacina para a infecção pelo vírus da zica. O tratamento recomendado para os casos sintomáticos é baseado no uso de paracetamol ou dipirona para o controle da febre e manejo da dor. No caso de erupções pruriginosas, os anti-histamínicos podem ser considerados. Não se recomenda o uso de ácido acetilsalicílico (AAS) e outros anti-inflamatórios, em função do risco aumentado de complicações hemorrágicas descritas nas infecções por outros flavivírus como o vírus da dengue.
+        </p>
+        
+
+        <h5>Microcefalia</h5>
+        
+        <p>
+        Ilustração de um bebê com microcefalia (à esquerda) e outro com tamanho da cabeça normal.
+        Ver também: Surto de vírus zika na América em 2015
+        </p>
+        <p>
+
+        Dados recentes sugerem que recém-nascidos de mães que contraíram o vírus da zica durante a gestação estão sob risco de terem microcefalia. Casos da malformação congênita cresceram exponencialmente no Brasil em 2015, ano em que também cresceu o número de infectados pelo vírus da zica. 
+        </p>
+        <p>
+
+        Em Novembro de 2015, o vírus da zica foi isolado em um recém-nascido com microcefalia no estado do Ceará, Brasil. Desde Dezembro de 2015, já existe a suspeita (ainda não provada) de que a infecção pelo zica ultrapassa a placenta e ocasiona microcefalia e danos cerebrais.
+        </p>
+        <p>
+
+        Em Janeiro de 2016, um bebê em Oahu, Estados Unidos nasceu com microcefalia, e foi o primeiro caso de dano cerebral causado pelo vírus da zica nos Estados Unidos. O bebê e a mãe testaram positivo para uma cepa do vírus. A mãe provavelmente adquiriu a doença em uma viagem ao Brasil em Maio de 2015 durante os primeiros estágios da gravidez. Apesar da gravidez ter progredido normalmente, a microcefalia do bebê só foi descoberta no nascimento.
+        </p>
+        <p>
+
+        Em 20 de Janeiro de 2016, cientistas do estado do Paraná, Brasil, descobriram que o vírus é capaz de penetrar a placenta durante a gravidez. Restos do material genético do vírus da zica foi encontrado numa amostra de tecido da placenta de uma mulher que abortou devido à microcefalia.
+        </p>
+        <p>
+
+        As principais causas da microcefalia são rubéola, toxoplasmose, sífilis e infecções causadas pelo citomegalovírus. Existem ainda poucos casos comprovados cientificamente da relação entre o zika e a microcefalia. Por enquanto, há muitos casos inferidos (sintomas similares aos do zika, mas sem comprovação por teste de material genético - PCR).
+        </p>
+        <p>
+
+        Embora a dengue e a chikungunya sejam também febres causadas por um arbovírus, como a zika, nunca se estabeleceu (de acordo com a OMS) nenhuma relação entre a infecção por essas doenças e o nascimento de bebês com microcefalia congênita. O Brasil foi o primeiro país do mundo a registrar crescimento de casos de microcefalia, cerca de 150 casos em 2014 para mais de 3800 em 2015. Dos 3800 casos, apenas 134 foram associadas ao vírus zika. A Polinésia Francesa também investigou e notou aumento dos casos de microcefalia após a notificação brasileira.
+        </p>
+        <p>
+
+        Pesquisados brasileiros demonstraram que o zika pode infectar células troncos neurais humanas e tem efeitos deletérios em neuroesferas e organóides cerebrais.
+        </p>    
+   </div>
+    <div id="3" class="container-texto">    
+        <h2>Etimologia</h2>
+        <p>
+        O vírus foi isolado pela primeira vez em 1947 por cientistas que, pesquisando a febre amarela, colocaram um macaco-reso numa jaula na Floresta de Zika (significando sobre-crescido na língua Luganda) próximo ao Instituto de Pesquisa Virológica do leste africano em Entebbe, Uganda. A febre se desenvolveu no macaco e os pesquisadores isolaram de seu soro um agente transmissível que foi descrito como Vírus Zika pela primeira vez em 1952. Junto com a descrição do vírus, os cientistas financiados pela Fundação Rockefeller (Dr. Jordi Casals) forneceram o vírus para uma organização que mantém culturas de organismos para laboratórios . O vírus não foi patenteado pela Fundação  . Foi subsequentemente isolado num humano na Nigéria em 1954. Da sua descoberta até 2007, casos confirmados de infecção com o vírus Zika na África e Sudeste da Ásia eram raros. Em 2007 porém, uma forte epidemia ocorreu na ilha Yap, Micronésia. Mais recentemente, epidemias ocorreram na Polinésia, ilha da Páscoa, Ilhas Cook e Nova Caledônia.
+        </p>
+    </div>
+    <div id="4" class="container-texto">    
+        <h2>Transmissão entre humanos</h2>
+        <p>
+        Em 2009, se verificou que o vírus Zika pode ser sexualmente transmitido entre humanos. Professor Brian Foy, biológo universitário da Colorado State University no Laboratório de Doenças Infecciosas e Transmitidas por Artropódes, visitou o Senegal para estudar mosquitos e foi picado em algumas ocasiões na sua pequisa. Alguns dias depois de voltar aos EUA ele ficou doente com febre Zika, mas não sem antes ter relações sexuais com sua esposa. Sua esposa subsequentemente mostrou sinais de infecção com febre Zika,além de extrema sensibilidade à luz. Foy é a primeira pessoa conhecida a ter passado um vírus vindo de insetos a outro ser humano via contato sexual.
+        </p>
+    </div>
+    <div id="5" class="container-texto">    
+        <h2>Mosquitos Geneticamente Modificados</h2>
+        <p>
+            Uma empresa de biotecnologia britânica chamada Oxitec desenvolveu um método para modificar a estrutura genética do mosquito Aedes aegypti e inaugurou pela primeira vez uma fábrica de mosquitos geneticamente modificados (GM) do Aedes aegypti no Brasil, em julho de 2012 com o objetivo de reduzir “a incidência de dengue”. Cientistas da Oxitec desenvolveram um Aedes aegypti que carrega um gene letal para as larvas, caso elas não se desenvolvem em água com o antibiótico tetraciclina (como é feito na fábrica). A ideia é liberar no ambiente urbano grandes quantidades dos machos desse Aedes aegypti transgênico, para que eles passem esse gene para as fêmeas selvagens. As larvas filhas desse casal não iriam encontrar tetraciclina na água dos criadouros e assim morreriam. A dengue é transmitida pelo mesmo mosquito, o Aedes aegypti, que também espalham o vírus Zika.” Os mosquitos da Oxitec foram os primeiros mosquitos transgênicos liberados para a vida selvagem em Juazeiro do Norte, no Ceará. . E segundo o site da organização sem fins lucrativos Gene Watch do Reino Unido, o Panamá rejeitou mosquitos Oxitec, após a realização de um ensaio preliminar. Malásia e Ilhas Cayman também pararam liberações depois de testes preliminares. Os experimentos continuam no Brasil, no entanto, a ANVISA, não autorizou lançamentos comerciais em meio a dúvidas sobre a eficácia e os riscos da tecnologia. Um relatório colocando em dúvida o valor desses mosquitos geneticamente modificados foi publicado pela Gene Watch já em 2010.
+        </p>
+    </div>
+    <div class="license-container">
+        Adaptado - Licenciado sob a licença <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.pt" >Creative Commons</a>: https://pt.wikipedia.org/wiki/Vírus_da_zica
+    </div>
+</div>
